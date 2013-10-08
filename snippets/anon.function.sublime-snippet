@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[function (${:arguments}) {
+	${0:// body...}
+}
+]]></content>
+    <tabTrigger>fn</tabTrigger>
+    <scope>source.js</scope>
+    <description>Anonymous function</description>
+</snippet>

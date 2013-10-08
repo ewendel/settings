@@ -1,0 +1,9 @@
+[user]
+	name = Erik Wendel
+	email = erik@wendel.no
+[alias]
+	s = status
+	d = diff
+	c = commit
+[color]
+	ui = true

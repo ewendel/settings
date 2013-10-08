@@ -1,0 +1,26 @@
+<snippet>
+	<content><![CDATA[
+define(function (require) {
+
+	var View = require('base/view');
+    var Mustache = require('libs/mustache/mustache');
+    var Template = require('text!templates/${2:templateName}.mustache');
+
+	var ${1:viewName} = View.extend({
+		initialize: function() {
+
+		},
+		render: function() {
+
+		}
+	});
+
+
+	return $1;
+});
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>makeview</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
