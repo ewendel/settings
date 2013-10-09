@@ -1,0 +1,17 @@
+CODE=$(git diff --staged | egrep -i "+ddescribe")
+
+echo $CODE
+
+if [ -n "$CODE" ]; then
+        echo "Commit diff contained string ddescribe - aborting commit"
+        exit 1
+fi
+
+CODE=$(git diff --staged | egrep -i "iit")
+
+echo $CODE
+
+if [ -n "$CODE" ]; then
+        echo "Commit diff contained string iit - aborting commit"
+        exit 1
+fi
