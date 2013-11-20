@@ -1,9 +1,15 @@
+[core]
+	excludesfile = ~/.gitignore
 [user]
 	name = Erik Wendel
 	email = erik@wendel.no
 [alias]
 	s = status
 	d = diff
+	ds = diff --staged
 	c = commit
+	cm = commit -m
 [color]
 	ui = true
+[push]
+	default = upstream
