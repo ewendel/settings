@@ -1,0 +1,80 @@
+[
+
+    // Nulling
+    { "keys": ["shift+alt+8"], "command": "noop" },
+    { "keys": ["shift+alt+9"], "command": "noop" },
+    { "keys": ["alt+8"], "command": "noop" },
+    { "keys": ["shift+4"], "command": "noop" },
+
+    { "keys": ["ctrl+shift+7"], "args": { "block": false }, "command": "toggle_comment" },
+    { "keys": ["alt+shift+j"], "command": "json_reindent" },
+
+    { "keys": ["alt+left"], "command": "move", "args": {"by": "words", "forward": false} },
+    { "keys": ["alt+right"], "command": "move", "args": {"by": "word_ends", "forward": true} },
+    { "keys": ["alt+shift+left"], "command": "move", "args": {"by": "words", "forward": false, "extend": true} },
+    { "keys": ["alt+shift+right"], "command": "move", "args": {"by": "word_ends", "forward": true, "extend": true} },
+
+    // Curly braces
+    { "keys": ["alt+shift+8"], "command": "insert_snippet", "args": {"contents": "{$0}"} },
+    { "keys": ["shift+alt+9"], "command": "insert", "args": {"characters": "}"}, 
+        "context": [
+            { "key": "following_text", "operator": "not_regex_contains", "operand": "^\\}" },
+        ] 
+    },
+    { "keys": ["shift+alt+9"], "command": "move", "args": {"by": "characters"}, 
+        "context": [
+            { "key": "following_text", "operator": "regex_contains", "operand": "^\\}" },
+        ] 
+    },
+
+    // Angle brackets
+    { "keys": ["alt+8"], "command": "insert_snippet", "args": {"contents": "[$0]"} },
+    { "keys": ["alt+9"], "command": "insert", "args": {"characters": "]"} },
+
+
+    // Moving to end of line with CMD+rightarrow
+    { "keys": ["ctrl+right"], "command": "move_to", "args": {"to": "eol", "extend": false} },
+    { "keys": ["ctrl+shift+right"], "command": "move_to", "args": {"to": "eol", "extend": true} },
+
+    // Moving to beginning of line with CMD+leftarrow
+    { "keys": ["ctrl+left"], "command": "move_to", "args": {"to": "bol", "extend": false} },
+    { "keys": ["ctrl+shift+left"], "command": "move_to", "args": {"to": "bol", "extend": true} },
+
+    // Moving to top of file with CMD+uparrow
+    { "keys": ["ctrl+up"], "command": "move_to", "args": {"to": "bof", "extend": false} },
+    { "keys": ["ctrl+shift+up"], "command": "move_to", "args": {"to": "bof", "extend": true} },
+
+    // Moving to bottom of file with CMD+downarrow
+    { "keys": ["ctrl+down"], "command": "move_to", "args": {"to": "eof", "extend": false} },
+    { "keys": ["ctrl+shift+down"], "command": "move_to", "args": {"to": "eof", "extend": true} },
+
+    // Unbinding default bindings for ctrl+num
+    { "keys": ["ctrl+1"] },
+    { "keys": ["ctrl+2"] },
+    { "keys": ["ctrl+3"] },
+    { "keys": ["ctrl+4"] },
+    { "keys": ["ctrl+5"] },
+    { "keys": ["ctrl+6"] },
+    { "keys": ["ctrl+7"] },
+    { "keys": ["ctrl+8"] },
+    { "keys": ["ctrl+9"] },
+
+    // rebinding ctrl+num to select tabs
+    { "keys": ["ctrl+1"], "command": "select_by_index", "args": {"index": 0} },
+    { "keys": ["ctrl+2"], "command": "select_by_index", "args": {"index": 1} },
+    { "keys": ["ctrl+3"], "command": "select_by_index", "args": {"index": 2} },
+    { "keys": ["ctrl+4"], "command": "select_by_index", "args": {"index": 3} },
+    { "keys": ["ctrl+5"], "command": "select_by_index", "args": {"index": 4} },
+    { "keys": ["ctrl+6"], "command": "select_by_index", "args": {"index": 5} },
+    { "keys": ["ctrl+7"], "command": "select_by_index", "args": {"index": 6} },
+    { "keys": ["ctrl+8"], "command": "select_by_index", "args": {"index": 7} },
+    { "keys": ["ctrl+9"], "command": "select_by_index", "args": {"index": 8} },
+    { "keys": ["ctrl+0"], "command": "select_by_index", "args": {"index": 9} },
+
+    // dollartegn
+    { "keys": ["shift+ctrl+4"], "command": "insert", "args": { "characters": "$" } },
+
+    // swap lines
+    { "keys": ["alt+shift+up"], "command": "swap_line_up" },
+    { "keys": ["alt+shift+down"], "command": "swap_line_down" }
+]
